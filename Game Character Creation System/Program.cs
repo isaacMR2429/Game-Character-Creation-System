@@ -60,7 +60,24 @@ namespace Game_Character_Creation_System
             string alignment = Console.ReadLine();
             Console.Write("Enter Weapon Choice: ");
             string weaponChoice = Console.ReadLine();
-            
+
+            int level = ReadInt("Enter Level: ");
+            int strength = ReadInt("Enter strength: ");
+            int intelligence = ReadInt("Enter intelligence");
+            int vitality = ReadInt("Enter vitality: ");
+            int charisma = ReadInt("Enter charisma: ");
+            int dexterity = ReadInt("Enter dexterity: ");
+            int wisdom = ReadInt("Enter wisdom: ");
+            int luck = ReadInt("Enter luck: ");
+            int completedQuests = ReadInt("Enter Completed Quests: ");
+
+            bool isMagicUser = ReadBool("Are you a Magic User? (true/false): ");
+            bool isRanged = ReadBool("Are you a Ranged fighter? (true/false): ");
+            bool isGuildMember = ReadBool("Are you a Guild Member? (true/false): ");
+            bool hasCompanion = Readbool("Do you have a Companion? (true/false): ");
+
+            int difficultLevel = ReadInt("Enter Difficulty Level: ");
+            int experienceLevel = ReadInt("Enter your Experience Level: ");
 
             return new Character(
                 userName,
@@ -69,7 +86,22 @@ namespace Game_Character_Creation_System
                 characterClass,
                 role,
                 alignment,
-                weaponChoice
+                weaponChoice,
+                level,
+                strength,
+                intelligence,
+                vitality,
+                charisma,
+                dexterity,
+                wisdom,
+                luck,
+                completedQuests,
+                isMagicUser,
+                isRanged,
+                isGuildMember,
+                experienceLevel,
+                difficultLevel,
+                hasCompanion
             );
         }
         static void ViewAllRecords(List<Character> characters)

@@ -46,7 +46,7 @@ namespace Game_Character_Creation_System
         }
         static Character CreateCharacter()
         {
-            Console.Write("Enter Username: ");
+            Console.Write("\nEnter Username: ");
             string userName = Console.ReadLine();
             Console.Write("Enter Character's Name: ");
             string name = Console.ReadLine();
@@ -74,7 +74,7 @@ namespace Game_Character_Creation_System
             bool isMagicUser = ReadBool("Are you a Magic User? (true/false): ");
             bool isRanged = ReadBool("Are you a Ranged fighter? (true/false): ");
             bool isGuildMember = ReadBool("Are you a Guild Member? (true/false): ");
-            bool hasCompanion = Readbool("Do you have a Companion? (true/false): ");
+            bool hasCompanion = ReadBool("Do you have a Companion? (true/false): ");
 
             int difficultLevel = ReadInt("Enter Difficulty Level: ");
             int experienceLevel = ReadInt("Enter your Experience Level: ");
@@ -177,6 +177,19 @@ namespace Game_Character_Creation_System
                 }
             }
             return 0;
+        }
+        static bool ReadBool(string message)
+        {
+            while (true)
+            {
+                Console.Write(message);
+                string input = Console.ReadLine().ToLower();
+                if (input == "true")
+                    return true;
+                if (input == "false")
+                    return false;
+                Console.WriteLine("Invalid input. Enter true or false");
+            }
         }
     }
 }

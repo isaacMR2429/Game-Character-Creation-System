@@ -36,7 +36,7 @@ namespace Game_Character_Creation_System
                         break;
                     case "5":
                         working = false;
-                        Console.WriteLine("Exiting Menu Program");
+                        Console.WriteLine("Menu Program Ended");
                         break;
                     default:
                         Console.WriteLine("Invalid Choice, please TRY AGAIN. Choose between 1 and 4)");
@@ -46,7 +46,8 @@ namespace Game_Character_Creation_System
         }
         static Character CreateCharacter()
         {
-            Console.Write("\nEnter Username: ");
+            Console.WriteLine("\nCreating NEW Character:");
+            Console.Write("\nEnter User's Name: ");
             string userName = Console.ReadLine();
             Console.Write("Enter Character's Name: ");
             string name = Console.ReadLine();
@@ -63,7 +64,7 @@ namespace Game_Character_Creation_System
 
             int level = ReadInt("Enter Level: ");
             int strength = ReadInt("Enter strength: ");
-            int intelligence = ReadInt("Enter intelligence");
+            int intelligence = ReadInt("Enter intelligence: ");
             int vitality = ReadInt("Enter vitality: ");
             int charisma = ReadInt("Enter charisma: ");
             int dexterity = ReadInt("Enter dexterity: ");
@@ -77,7 +78,7 @@ namespace Game_Character_Creation_System
             bool hasCompanion = ReadBool("Do you have a Companion? (true/false): ");
 
             int difficultLevel = ReadInt("Enter Difficulty Level: ");
-            int experienceLevel = ReadInt("Enter your Experience Level: ");
+            int experienceLevel = ReadInt("Enter your experience Level: ");
 
             return new Character(
                 userName,
@@ -99,8 +100,8 @@ namespace Game_Character_Creation_System
                 isMagicUser,
                 isRanged,
                 isGuildMember,
-                experienceLevel,
                 difficultLevel,
+                experienceLevel,
                 hasCompanion
             );
         }
@@ -108,7 +109,7 @@ namespace Game_Character_Creation_System
         {
             if (characters.Count == 0)
             {
-                Console.WriteLine("No characters found.");
+                Console.WriteLine("\nNo characters found.");
                 return;
             }
             foreach (Character c in characters)
@@ -118,12 +119,12 @@ namespace Game_Character_Creation_System
         }
         static void SearchRecords(List<Character>characters)
         {
-            Console.Write("Enter Character name to search: ");
+            Console.Write("\nEnter Character name to search: ");
             string searchName = Console.ReadLine();
             bool found = false;
             foreach (Character c in characters)
             {
-                if (c.Name.ToLower() == searchName)
+                if (c.Name.ToLower() == searchName.ToLower())
                 {
                     c.DisplayDetails();
                     found = true;
@@ -131,31 +132,31 @@ namespace Game_Character_Creation_System
             }
             if (!found)
             {
-                Console.WriteLine("No Character found.");
+                Console.WriteLine("\nNo Character found.");
             }
         }
         static void DisplaySummary(List<Character> characters)
         {
             if (characters.Count == 0)
             {
-                Console.WriteLine("No Summary records.");
+                Console.WriteLine("\nNo Summary records.");
                 return;
             }
             int totalLevels = 0;
-            int highestStrenght = 0;
+            int highestStrength = 0;
             foreach (Character c in characters)
             {
                 totalLevels += c.Level;
-                if (c.Strength > highestStrenght)
+                if (c.Strength > highestStrength)
                 {
-                    highestStrenght = c.Strength;
+                    highestStrength = c.Strength;
                 }
             }
             double averageLevel = (double)totalLevels / characters.Count;
-            Console.WriteLine("Summary Statistics");
+            Console.WriteLine("\nSummary Statistics");
             Console.WriteLine($"Total Characters: {characters.Count} ");
             Console.WriteLine($"Average Level: {averageLevel}");
-            Console.WriteLine($"Highest Strength: {highestStrenght}");
+            Console.WriteLine($"Highest Strength: {highestStrength}");
 
         } 
         static int ReadInt(string message)

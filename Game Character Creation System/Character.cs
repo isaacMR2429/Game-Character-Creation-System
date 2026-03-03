@@ -144,7 +144,7 @@ namespace Game_Character_Creation_System
             Console.WriteLine($"Ranged Fighter: {IsRanged}");
             Console.WriteLine($"Guild Member: {IsGuildMember}");
             Console.WriteLine($"Has Companion: {HasCompanion}");
-            Console.WriteLine(($"Difficulty Level: {DifficultyLevel}");
+            Console.WriteLine($"Difficulty Level: {DifficultyLevel}");
             Console.WriteLine($"Experience Level: {ExperienceLevel}");
             Console.WriteLine($"Class Type: {ClassType}");
             Console.WriteLine($"Combat Ready: {IsCombatReady}");

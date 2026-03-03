@@ -125,6 +125,29 @@ namespace Game_Character_Creation_System
         {
             Console.WriteLine("These are the Character Details");
             Console.WriteLine($"User's Name: {UserName}");
+            Console.WriteLine($"Race: {Race}");
+            Console.WriteLine($"Class: {CharacterClass}");
+            Console.WriteLine($"Role: {Role}");
+            Console.WriteLine($"Alignment: {Alignment}");
+            Console.WriteLine($"Weapn Choice: {WeaponChoice}");
+            Console.WriteLine("\nThese are the Character Stats");
+            Console.WriteLine($"Level: {Level}");
+            Console.WriteLine($"Strength: {Strength}");
+            Console.WriteLine($"Intelligence: {Intelligence}");
+            Console.WriteLine($"Vitality: {Vitality}");
+            Console.WriteLine($"Charisma: {Charisma}");
+            Console.WriteLine($"Dexterity: {Dexterity}");
+            Console.WriteLine($"Wisdom: {Wisdom}");
+            Console.WriteLine($"Luck: {Luck}");
+            Console.WriteLine($"Completed Quests: {CompletedQuests}");
+            Console.WriteLine($"Magic User: {IsMagicUser}");
+            Console.WriteLine($"Ranged Fighter: {IsRanged}");
+            Console.WriteLine($"Guild Member: {IsGuildMember}");
+            Console.WriteLine($"Has Companion: {HasCompanion}");
+            Console.WriteLine(($"Difficulty Level: {DifficultyLevel}");
+            Console.WriteLine($"Experience Level: {ExperienceLevel}");
+            Console.WriteLine($"Class Type: {ClassType}");
+            Console.WriteLine($"Combat Ready: {IsCombatReady}");
             
         }
     }

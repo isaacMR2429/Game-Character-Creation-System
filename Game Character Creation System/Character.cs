@@ -129,7 +129,7 @@ namespace Game_Character_Creation_System
             Console.WriteLine($"Class: {CharacterClass}");
             Console.WriteLine($"Role: {Role}");
             Console.WriteLine($"Alignment: {Alignment}");
-            Console.WriteLine($"Weapn Choice: {WeaponChoice}");
+            Console.WriteLine($"Weapon Choice: {WeaponChoice}");
             Console.WriteLine("\nThese are the Character Stats");
             Console.WriteLine($"Level: {Level}");
             Console.WriteLine($"Strength: {Strength}");

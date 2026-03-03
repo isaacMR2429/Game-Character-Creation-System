@@ -2,6 +2,11 @@
 
 namespace Game_Character_Creation_System
 {
+    // For my final project I decided to do the Game Character Creation System and this program is a simple RPG style character creation system.
+    // It's also influnced when I play DND with friends and we have to create new characters, but
+    // anyways all the user needs to do is enter traits and stats to build a custom character.
+    // Although you are able to choose your own class the system does determine class type and combat readiness automatically as a recommendation. 
+    // The menu option lets user create characters, view all the characters they've created, search for specific characters and see summary stats.
     internal class Program
     {
         static void Main(string[] args)

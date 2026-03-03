@@ -12,10 +12,10 @@ namespace Game_Character_Creation_System
         public string UserName;
         public string Name;
         public string Race;
-        public string Class;
+        public string CharacterClass;
         public string Role;
         public string Alignment;
-        public string WeaponPreference;
+        public string WeaponChoice;
 
         // Numberic fields
         public int Level;
@@ -41,5 +41,91 @@ namespace Game_Character_Creation_System
         public string ClassType;
         public bool HasCompanion;
         public bool IsCombatReady;
+
+        public Character (
+            string userName, 
+            string name,
+            string race,
+            string characterClass,
+            string role,
+            string alignment,
+            string weaponChoice,
+            int level,
+            int strength,
+            int intelligence,
+            int vitality,
+            int charisma,
+            int dexterity,
+            int wisdom,
+            int luck,
+            int completedQuests,
+            bool isMagicUser,
+            bool isRanged,
+            bool isGuildMember,
+            int difficultyLevel,
+            int experienceLevel,
+            bool hasCompanion
+            )
+        {
+            UserName = userName;
+            Name = name;
+            Race = race;
+            CharacterClass = characterClass;
+            Role = role;
+            Alignment = alignment;
+            WeaponChoice = weaponChoice;
+            Level = level;
+            Strength = strength;
+            Intelligence = intelligence;
+            Vitality = vitality;
+            Charisma = charisma;
+            Dexterity = dexterity;
+            Wisdom = wisdom;
+            Luck = luck;
+            CompletedQuests = completedQuests;
+            IsMagicUser = isMagicUser;
+            IsRanged = isRanged;
+            IsGuildMember = isGuildMember;
+            DifficultyLevel = difficultyLevel;
+            ExperienceLevel = experienceLevel;
+            HasCompanion = hasCompanion;
+
+            ClassType = DeterminingClassType();
+            IsCombatReady = DeterminingCombatReadiness();
+        }
+        public string DeterminingClassType()
+        {
+            if (Vitality >= 15 && Strength >= 12)
+            {
+                return "Tank";
+            }
+            else if (Intelligence >= 15 && IsMagicUser == true)
+            {
+                return "Wizard";
+            }
+            else if (Dexterity >= 14 && Charisma >= 12)
+            {
+                return "Healer";
+            }
+            return "Balanced";
+        }
+        public bool DeterminingCombatReadiness()
+        {
+            if (Level >= 10 && CompletedQuests >= 5)
+            {
+                if (DifficultyLevel >= 3 && Level < 15)
+                {
+                    return false;
+                }
+                return true;
+            }
+            return false;
+        }
+        public void DisplayDetails()
+        {
+            Console.WriteLine("These are the Character Details");
+            Console.WriteLine($"User's Name: {UserName}");
+            
+        }
     }
 }

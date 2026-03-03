@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Game_Character_Creation_System
 {
-    internal class Character
+    public class Character
     {
         // String Fields
         public string UserName;
